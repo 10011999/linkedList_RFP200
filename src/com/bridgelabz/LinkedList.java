@@ -1,4 +1,5 @@
 package com.bridgelabz;
+
 class Node<T> {
     T data;
     Node<T> next;
@@ -36,6 +37,7 @@ class List<T> {
 
         len++;
     }
+
     public void insertFirst(int data) {
         Node newNode = new Node(data);
         if (head == null) {
@@ -63,6 +65,21 @@ class List<T> {
 
         S += String.valueOf(X.data);
         return S + "}";
+    }
+
+    public void insertLast(int data) {
+        Node newNode = new Node(data);
+        if (head == null) {
+            head = newNode;
+        } else {
+            Node temp = head;
+            while (temp.next != null) {
+                temp = temp.next;
+            }
+            temp.next = newNode;
+
+        }
+        len++;
     }
 }
 public class LinkedList {
